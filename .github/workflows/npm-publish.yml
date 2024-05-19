@@ -4,9 +4,8 @@
 name: Publish create-paket-app
 
 on:
-  on:
-    release:
-      types: [published]
+  release:
+    types: [published]
 
 jobs:
   build:
