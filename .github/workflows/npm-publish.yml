@@ -4,12 +4,12 @@
 name: Publish create-paket-app
 
 on:
-  push:
-    paths:
-      - "packages/cli/**"
+  push
+  # paths:
+  #   - "packages/cli/**"
 
 jobs:
-  pnpm-install:
+  build:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -27,19 +27,12 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
-  build:
-    defaults:
-      run:
+      - name: Run tests
         working-directory: packages/cli
-    needs: pnpm-install
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-      - run: pnpm run test
-      - run: pnpm run build
+        run: pnpm run test
+      - name: Build
+        working-directory: packages/cli
+        run: pnpm run build
 
   publish-npm:
     defaults:
