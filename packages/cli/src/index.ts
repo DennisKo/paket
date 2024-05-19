@@ -1,5 +1,5 @@
 function hello() {
-  console.log("Hello World from Paket");
+  console.log("Hello World from Paket!");
 }
 
 hello();
