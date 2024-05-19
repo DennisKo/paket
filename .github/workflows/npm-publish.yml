@@ -4,9 +4,9 @@
 name: Publish create-paket-app
 
 on:
-  push
-  # paths:
-  #   - "packages/cli/**"
+  on:
+    release:
+      types: [published]
 
 jobs:
   build:
