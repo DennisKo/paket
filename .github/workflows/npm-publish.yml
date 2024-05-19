@@ -10,6 +10,9 @@ on:
 
 jobs:
   build:
+    defaults:
+      run:
+        working-directory: packages/cli
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,6 +23,9 @@ jobs:
       - run: npm test
 
   publish-npm:
+    defaults:
+      run:
+        working-directory: packages/cli
     needs: build
     runs-on: ubuntu-latest
     steps:
