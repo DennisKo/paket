@@ -1,6 +1,5 @@
 {
   "name": "paket",
-  "private": true,
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
