@@ -1,7 +1,14 @@
 {
-  "extends": "@total-typescript/tsconfig/tsc/no-dom/library-monorepo",
   "compilerOptions": {
+    "target": "es2019",
+    "moduleResolution": "node",
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": false,
     "outDir": "dist",
     "rootDir": "src"
-  }
+  },
+  "include": ["src"],
+  "exclude": ["dist"]
 }
