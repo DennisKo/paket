@@ -1,14 +1,14 @@
 {
-  "name": "create-paket-app",
+  "name": "create-foundation-app",
   "version": "0.0.2",
   "scripts": {
     "dev": "tsx src/index.ts",
-    "build": "tsc",
+    "build": "tsc && cp -r templates dist/",
     "test": "echo 'Add test script here'",
     "lint": "echo 'Add lint script here'"
   },
   "bin": {
-    "create-paket-app": "dist/index.js"
+    "create-foundation-app": "dist/cli/index.js"
   },
   "devDependencies": {
     "@total-typescript/tsconfig": "^1.0.4",

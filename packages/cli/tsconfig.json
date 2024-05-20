@@ -6,7 +6,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": false,
-    "outDir": "dist",
+    "outDir": "dist/cli",
     "rootDir": "src"
   },
   "include": ["src"],

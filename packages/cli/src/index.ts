@@ -12,6 +12,8 @@ const install = async () => {
   const destination = path.join(currentDir, appName);
   await fs.mkdir(destination);
   createPackageJsonTemplate({ appName, destination });
+  // copy app template
+  await fs.copyFile(path.join(__dirname, "../templates/app"), destination);
 };
 
 install()
