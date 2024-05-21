@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "scripts": {
     "dev": "tsx src/index.ts",
-    "build": "tsc && cp -r templates dist/",
+    "build": "tsc && tsx prepare.ts",
     "test": "echo 'Add test script here'",
     "lint": "echo 'Add lint script here'"
   },
@@ -17,6 +17,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@inquirer/prompts": "^5.0.4"
+    "@inquirer/prompts": "^5.0.4",
+    "glob": "^10.3.15"
   }
 }

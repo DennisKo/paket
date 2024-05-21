@@ -1,26 +1,26 @@
 #!/usr/bin/env node
 
-import { input } from "@inquirer/prompts";
-import { createPackageJsonTemplate } from "./package.json";
-import path from "path";
-import fs from "fs/promises";
+import { input } from '@inquirer/prompts';
+import { createPackageJsonTemplate } from './package.json';
+import path from 'path';
+import fs from 'fs/promises';
 
 const install = async () => {
   console.log("Ready to ship your next app? Let's get started! 📦");
-  const appName = await input({ message: "App name?" });
+  const appName = await input({ message: 'App name?' });
   const currentDir = process.cwd();
   const destination = path.join(currentDir, appName);
   await fs.mkdir(destination);
   createPackageJsonTemplate({ appName, destination });
   // copy app template
-  await fs.copyFile(path.join(__dirname, "../templates/app"), destination);
+  await fs.copyFile(path.join(__dirname, '../templates/app'), destination);
 };
 
 install()
   .then()
   .catch(async (reason) => {
-    console.log();
-    console.log("Aborting installation.");
+    console.log('hello');
+    console.log('Aborting installation.');
     // if (reason.command) {
     //   console.log(`  ${cyan(reason.command)} has failed.`)
     // } else {
